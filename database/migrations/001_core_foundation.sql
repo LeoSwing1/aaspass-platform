@@ -1,0 +1,2 @@
+-- Block 1 foundation migration boundary.
+-- Fresh environments initialize from database/schema.sql followed by database/seed.sql.

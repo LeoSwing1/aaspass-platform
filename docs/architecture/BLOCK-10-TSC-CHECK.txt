@@ -1,0 +1,278 @@
+src/config/env.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/env.ts(44,33): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/config/env.ts(46,67): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/db/pool.ts(1,16): error TS2307: Cannot find module 'pg' or its corresponding type declarations.
+src/middleware/auth.ts(1,54): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/middleware/permissions.ts(1,54): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/middleware/security.ts(1,20): error TS2307: Cannot find module 'node:crypto' or its corresponding type declarations.
+src/middleware/security.ts(2,54): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/admin.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/admin.ts(9,31): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/admin.ts(9,36): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/admin.ts(9,40): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/admin.ts(10,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/admin.ts(24,30): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/admin.ts(24,35): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/admin.ts(24,39): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/admin.ts(25,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/admin.ts(30,31): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/admin.ts(30,36): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/admin.ts(30,40): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/admin.ts(31,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/admin.ts(36,33): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/admin.ts(36,38): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/admin.ts(36,42): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/admin.ts(37,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/admin.ts(42,32): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/admin.ts(42,37): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/admin.ts(42,41): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/admin.ts(43,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/auth.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/auth.ts(2,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/routes/auth.ts(20,88): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/auth.ts(20,93): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/auth.ts(20,98): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/auth.ts(25,10): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/auth.ts(65,32): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/auth.ts(76,44): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/auth.ts(76,49): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/auth.ts(76,54): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/auth.ts(78,9): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/config.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/config.ts(3,17): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/config.ts(3,22): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/customer.ts(2,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/routes/customer.ts(27,39): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(27,43): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(27,47): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(30,35): error TS7006: Parameter 'z' implicitly has an 'any' type.
+src/routes/customer.ts(31,60): error TS7006: Parameter 'z' implicitly has an 'any' type.
+src/routes/customer.ts(34,34): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/customer.ts(34,39): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(34,43): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(39,31): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(39,35): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(39,39): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(48,44): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(48,48): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(48,52): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(55,28): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(55,32): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(55,36): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(61,28): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(61,32): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(61,36): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(104,33): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(104,37): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(104,41): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(122,33): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(122,37): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(122,41): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(127,34): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(127,38): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(127,42): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(135,39): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(135,43): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(135,47): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(145,40): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(145,44): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(145,48): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(154,48): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(154,52): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(154,56): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(160,50): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(160,54): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(160,58): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(171,31): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(171,35): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(171,39): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(206,30): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(206,34): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(206,38): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(212,34): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(212,38): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(212,42): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/customer.ts(221,31): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/customer.ts(221,35): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/customer.ts(221,39): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/delivery.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/delivery.ts(2,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/routes/delivery.ts(32,26): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/delivery.ts(32,30): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/delivery.ts(32,34): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/delivery.ts(33,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/delivery.ts(40,31): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/delivery.ts(40,35): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/delivery.ts(40,39): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/delivery.ts(43,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/delivery.ts(50,33): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/delivery.ts(50,37): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/delivery.ts(50,41): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/delivery.ts(52,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/delivery.ts(58,28): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/delivery.ts(58,32): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/delivery.ts(58,36): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/delivery.ts(60,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/delivery.ts(78,47): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/delivery.ts(78,51): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/delivery.ts(78,55): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/delivery.ts(80,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/delivery.ts(103,47): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/delivery.ts(103,51): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/delivery.ts(103,55): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/delivery.ts(105,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/delivery.ts(122,32): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/delivery.ts(122,36): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/delivery.ts(122,40): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/delivery.ts(124,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/health.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/health.ts(6,18): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/health.ts(6,24): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/health.ts(7,22): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/health.ts(7,28): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/health.ts(8,29): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/health.ts(8,35): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/health.ts(9,8): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/integrations/index.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/integrations/index.ts(2,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/routes/integrations/index.ts(20,67): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/integrations/index.ts(20,73): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/integrations/index.ts(30,45): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/integrations/index.ts(30,50): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/integrations/index.ts(36,41): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/integrations/index.ts(36,46): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/integrations/index.ts(36,51): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/integrations/index.ts(53,48): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/integrations/index.ts(53,53): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/integrations/index.ts(53,58): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/integrations/index.ts(65,43): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/integrations/index.ts(65,48): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/integrations/index.ts(65,53): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/integrations/index.ts(84,48): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/integrations/index.ts(84,53): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/integrations/index.ts(84,58): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/integrations/index.ts(91,20): error TS2304: Cannot find name 'parseCashfreePaymentEvent'.
+src/routes/integrations/index.ts(114,37): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/integrations/index.ts(114,42): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/integrations/index.ts(114,47): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/integrations/index.ts(121,48): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/integrations/index.ts(121,53): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/integrations/index.ts(121,58): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/integrations/index.ts(130,90): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/integrations/index.ts(130,96): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/integrations/index.ts(130,101): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/integrations/index.ts(134,86): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/integrations/index.ts(134,91): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/integrations/index.ts(134,96): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/integrations/index.ts(142,51): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/integrations/index.ts(142,56): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/integrations/index.ts(142,61): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/me.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/me.ts(8,24): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/me.ts(8,29): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/me.ts(8,34): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/me.ts(11,9): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/operations/index.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/operations/index.ts(2,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/routes/operations/index.ts(11,32): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/operations/index.ts(11,37): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/operations/index.ts(11,41): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/operations/index.ts(29,76): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/operations/index.ts(29,80): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/operations/index.ts(29,84): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/operations/index.ts(36,77): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/operations/index.ts(36,81): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/operations/index.ts(36,85): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/roles.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/roles.ts(5,18): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/routes/roles.ts(5,24): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/support/index.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/support/index.ts(2,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/routes/support/index.ts(45,94): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/support/index.ts(45,98): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/support/index.ts(45,102): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/support/index.ts(100,99): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/support/index.ts(100,103): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/support/index.ts(100,107): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/support/index.ts(123,24): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/support/index.ts(123,29): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/support/index.ts(123,34): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/support/index.ts(149,25): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/support/index.ts(149,30): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/support/index.ts(149,35): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/support/index.ts(164,27): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/support/index.ts(164,32): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/support/index.ts(164,37): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/support/index.ts(205,37): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/support/index.ts(205,42): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/support/index.ts(205,47): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/support/index.ts(220,97): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/support/index.ts(220,102): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/support/index.ts(220,107): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/support/index.ts(240,110): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/support/index.ts(240,114): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/support/index.ts(240,118): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/vendor/index.ts(1,24): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/routes/vendor/index.ts(2,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/routes/vendor/index.ts(20,26): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/vendor/index.ts(20,30): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/vendor/index.ts(20,34): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/vendor/index.ts(21,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/vendor/index.ts(27,33): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/vendor/index.ts(27,37): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/vendor/index.ts(27,41): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/vendor/index.ts(28,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/vendor/index.ts(39,32): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/vendor/index.ts(39,36): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/vendor/index.ts(39,40): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/vendor/index.ts(40,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/vendor/index.ts(46,70): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/vendor/index.ts(46,74): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/vendor/index.ts(46,78): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/vendor/index.ts(48,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/vendor/index.ts(54,75): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/vendor/index.ts(54,79): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/vendor/index.ts(54,83): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/vendor/index.ts(56,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/vendor/index.ts(63,30): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/vendor/index.ts(63,34): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/vendor/index.ts(63,38): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/vendor/index.ts(64,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/vendor/index.ts(70,78): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/vendor/index.ts(70,82): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/vendor/index.ts(70,86): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/vendor/index.ts(71,104): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/routes/vendor/index.ts(78,36): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes/vendor/index.ts(78,40): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes/vendor/index.ts(78,44): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/routes/vendor/index.ts(79,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/server.ts(1,73): error TS2307: Cannot find module 'express' or its corresponding type declarations.
+src/server.ts(2,18): error TS2307: Cannot find module 'cors' or its corresponding type declarations.
+src/server.ts(3,26): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/server.ts(25,25): error TS7006: Parameter 'origin' implicitly has an 'any' type.
+src/server.ts(25,33): error TS7006: Parameter 'callback' implicitly has an 'any' type.
+src/server.ts(27,47): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/server.ts(27,52): error TS7006: Parameter '_res' implicitly has an 'any' type.
+src/server.ts(27,58): error TS7006: Parameter 'buf' implicitly has an 'any' type.
+src/server.ts(29,15): error TS7006: Parameter '_req' implicitly has an 'any' type.
+src/server.ts(29,21): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/server.ts(46,64): error TS18046: 'err' is of type 'unknown'.
+src/server.ts(58,42): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/server.ts(60,20): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/server.ts(60,45): error TS2339: Property 'unref' does not exist on type 'number'.
+src/server.ts(62,1): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/server.ts(63,1): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/services/audit.ts(3,7): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/services/notifications/service.ts(1,20): error TS2307: Cannot find module 'node:crypto' or its corresponding type declarations.
+src/services/notifications/service.ts(5,52): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/services/payment/cashfree.ts(1,20): error TS2307: Cannot find module 'node:crypto' or its corresponding type declarations.
+src/services/payment/cashfree.ts(81,33): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/services/payment/cashfree.ts(81,56): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/utils/token.ts(1,20): error TS2307: Cannot find module 'node:crypto' or its corresponding type declarations.
+src/utils/token.ts(18,18): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/utils/token.ts(19,16): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/utils/token.ts(29,31): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/utils/token.ts(35,13): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/utils/token.ts(36,13): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/utils/token.ts(39,32): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.

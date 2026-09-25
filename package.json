@@ -1,0 +1,17 @@
+{
+  "name": "aaspass-master",
+  "private": true,
+  "version": "3.4.0",
+  "scripts": {
+    "check:backend": "npm --prefix backend run check",
+    "build:backend": "npm --prefix backend run build",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:admin": "npm --prefix apps/admin run dev",
+    "dev:vendor": "npm --prefix apps/vendor run dev",
+    "dev:support": "npm --prefix apps/support run dev",
+    "db:up": "docker compose -f database/docker-compose.yml up -d",
+    "db:down": "docker compose -f database/docker-compose.yml down",
+    "db:seed": "psql postgresql://postgres:postgres@localhost:5432/aaspass -f database/schema.sql -f database/seed.sql",
+    "audit:structure": "node tools/structure-audit.mjs"
+  }
+}

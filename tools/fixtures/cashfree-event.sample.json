@@ -1,0 +1,11 @@
+{
+  "type": "PAYMENT_SUCCESS_WEBHOOK",
+  "data": {
+    "order": { "order_id": "00000000-0000-0000-0000-000000000001" },
+    "payment": {
+      "cf_payment_id": "123456789",
+      "payment_status": "SUCCESS",
+      "payment_amount": 106.18
+    }
+  }
+}

@@ -1,0 +1,13 @@
+AasPass Customer UI v2.6 source scan
+====================================
+
+Target: apps/customer/lib/main.dart
+
+Structural result: PASS
+Dart bracket/quote scan: balanced
+Primary visible UI sections: home, categories, vendor, product listing, cart, checkout, orders, notifications, profile
+Overflow mitigation: explicit category tile extent + product card fixed media region + Spacer anchored action row
+Splash lifecycle: cold start + resume threshold
+Location handling: service disabled / denied / deniedForever / success
+
+Note: a full `flutter analyze` and device build must still be run in a local Flutter SDK environment.

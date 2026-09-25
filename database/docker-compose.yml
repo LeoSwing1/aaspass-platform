@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: aaspass
+      POSTGRES_PASSWORD: aaspass_dev_password
+      POSTGRES_DB: aaspass
+    ports:
+      - "5432:5432"
+    volumes:
+      - aaspass_pgdata:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./seed.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - aaspass_redis:/data
+volumes:
+  aaspass_pgdata:
+  aaspass_redis:

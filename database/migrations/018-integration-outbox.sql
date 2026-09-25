@@ -1,0 +1,4 @@
+-- AasPass Block 28: durable domain integration outbox.
+CREATE TABLE IF NOT EXISTS integration_outbox (id UUID PRIMARY KEY DEFAULT gen_random_uuid(),event_type VARCHAR(100) NOT NULL,aggregate_type VARCHAR(80) NOT NULL,aggregate_id UUID NOT NULL,actor_user_id UUID REFERENCES users(id),payload JSONB NOT NULL DEFAULT '{}',status VARCHAR(20) NOT NULL DEFAULT 'PENDING' CHECK(status IN ('PENDING','PROCESSING','PROCESSED','FAILED')),attempts INTEGER NOT NULL DEFAULT 0,available_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),processed_at TIMESTAMPTZ,last_error TEXT,created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW());
+CREATE INDEX IF NOT EXISTS idx_integration_outbox_pending ON integration_outbox(status,available_at,created_at);
+CREATE INDEX IF NOT EXISTS idx_integration_outbox_aggregate ON integration_outbox(aggregate_type,aggregate_id,created_at DESC);
