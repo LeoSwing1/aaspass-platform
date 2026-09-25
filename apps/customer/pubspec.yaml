@@ -1,6 +1,6 @@
 name: aaspass_customer
 publish_to: 'none'
-version: 0.12.2+15
+version: 0.13.0+16
 
 environment:
   sdk: '>=3.8.0 <4.0.0'

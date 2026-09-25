@@ -120,7 +120,7 @@ router.get('/customers/:customerId', requirePermission('VIEW_CUSTOMER_PROFILE'),
     query(`SELECT id,channel,title,body,status,created_at,sent_at FROM notifications WHERE user_id=$1 ORDER BY created_at DESC LIMIT 50`,[userId]),
   ]);
   if(!profile.rows[0]){res.status(404).json({error:'CUSTOMER_NOT_FOUND'});return;}
-  await audit('ADMIN_CUSTOMER_360_VIEWED','users',userId,req.authUser!.id,{customerCode});
+  await audit('ADMIN_CUSTOMER_360_VIEWED','users',userId,req.authUser!.id,{customerCode:customerId});
   res.json({profile:profile.rows[0],addresses:addresses.rows,orders:orders.rows,tickets:tickets.rows,notifications:notifications.rows,mode:'database'});
 }catch(e){next(e)}});
 
@@ -146,7 +146,7 @@ router.patch('/customers/:customerId/status', requirePermission('MANAGE_USERS'),
   const r=await query<{user_id:string}>(`UPDATE users SET is_active=$1,updated_at=NOW() WHERE id=(SELECT user_id FROM customer_profiles WHERE customer_code=$2 LIMIT 1) AND role='CUSTOMER' RETURNING id AS user_id`,[input.isActive,customerId]);
   if(!r.rows[0]){res.status(404).json({error:'CUSTOMER_NOT_FOUND'});return;}
   await audit('ADMIN_CUSTOMER_STATUS_UPDATED','users',r.rows[0].user_id,req.authUser!.id,{customerCode:customerId,isActive:input.isActive,reason:input.reason??null});
-  await queueNotification({userId:r.rows[0].user_id,channel:'PUSH',title:'AasPass account status changed',body:`Your AasPass account is now ${input.isActive?'active':'inactive'}.`,data:{type:'ACCOUNT_STATUS',customerCode:customerId,isActive:input.isActive}});
+  await queueNotification({userId:r.rows[0].user_id,channel:'PUSH',title:'AasPass account status changed',body:`Your AasPass account is now ${input.isActive?'active':'inactive'}.`,data:{type:'ACCOUNT_STATUS',customerCode:customerId,isActive:String(input.isActive)}});
   res.json({ok:true,isActive:input.isActive});
 }catch(e){next(e)}});
 

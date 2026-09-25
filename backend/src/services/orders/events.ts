@@ -22,7 +22,7 @@ const customerMessages: Record<string,[string,string]>={
 
 export async function recordOrderEvent(input:{orderId:string;eventType:string;source:string;actorUserId?:string|null;payload?:Record<string,unknown>;notify?:boolean}):Promise<void>{
   await query(`INSERT INTO order_events(order_id,event_type,source,actor_user_id,payload) VALUES($1,$2,$3,$4,$5)`,[input.orderId,input.eventType,input.source,input.actorUserId??null,JSON.stringify(input.payload??{})]);
-  await publishDomainEvent({type:'ORDER_STATUS_CHANGED',aggregateType:'ORDER',aggregateId:input.orderId,actorUserId:input.actorUserId,payload:{status:input.eventType,source:input.source,...(input.payload??{})}});
+  await publishDomainEvent({type:'ORDER_STATUS_CHANGED',aggregateType:'ORDER',aggregateId:input.orderId,actorUserId:input.actorUserId ?? null,payload:{status:input.eventType,source:input.source,...(input.payload??{})}});
   if(input.notify===false) return;
   const order=await query<any>(`SELECT o.id,o.customer_id,v.owner_user_id,da.delivery_partner_id FROM orders o JOIN vendors v ON v.id=o.vendor_id LEFT JOIN delivery_assignments da ON da.order_id=o.id WHERE o.id=$1 LIMIT 1`,[input.orderId]);
   const row=order.rows[0]; if(!row) return;

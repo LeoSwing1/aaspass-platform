@@ -46,7 +46,7 @@ router.post('/payments/session', async (req, res, next) => {
     if (!order) { res.status(404).json({ error: 'ORDER_NOT_FOUND' }); return; }
     if (req.authUser!.id !== order.customer_id && !['SUPER_ADMIN','ADMIN','FINANCE_ADMIN'].includes(req.authUser!.role)) { res.status(403).json({ error:'FORBIDDEN' }); return; }
     if (!order.phone) { res.status(400).json({ error:'CUSTOMER_PHONE_REQUIRED' }); return; }
-    const cf = await createCashfreeOrder({ orderId: order.id, amountPaise: Number(order.total_paise), customerId: order.customer_id, customerPhone: order.phone, customerName: order.name, customerEmail: order.email ?? undefined, returnUrl: input.returnUrl, notifyUrl: input.notifyUrl });
+    const cf = await createCashfreeOrder({ orderId: order.id, amountPaise: Number(order.total_paise), customerId: order.customer_id, customerPhone: order.phone, customerName: order.name, ...(order.email ? { customerEmail: order.email } : {}), returnUrl: input.returnUrl, notifyUrl: input.notifyUrl });
     const updatedPayment = await query<{id:string}>(`UPDATE payments SET method='ONLINE',status='PENDING',provider='CASHFREE',provider_order_id=$1,amount_paise=$2,currency='INR',raw_response=$3,updated_at=NOW() WHERE order_id=$4 RETURNING id`,
       [cf.orderId,Number(order.total_paise),JSON.stringify(cf.raw),order.id]);
     if (updatedPayment.rows.length===0) {

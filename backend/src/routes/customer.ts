@@ -34,7 +34,7 @@ function haversineKm(aLat:number,aLon:number,bLat:number,bLon:number){
 
 async function validateTargetedPromotion(client:any, promotion:any, userId:string, vendorId:string):Promise<string|null>{
   if(promotion.vendor_id && promotion.vendor_id!==vendorId) return 'PROMOTION_VENDOR_MISMATCH';
-  const delivered=await client.query<{orders:string;spend:string}>(`SELECT COUNT(*) FILTER(WHERE status='DELIVERED')::text orders,COALESCE(SUM(total_paise) FILTER(WHERE status='DELIVERED'),0)::text spend FROM orders WHERE customer_id=$1`,[userId]);
+  const delivered=await client.query(`SELECT COUNT(*) FILTER(WHERE status='DELIVERED')::text orders,COALESCE(SUM(total_paise) FILTER(WHERE status='DELIVERED'),0)::text spend FROM orders WHERE customer_id=$1`,[userId]);
   const orders=Number(delivered.rows[0]?.orders??0), spend=Number(delivered.rows[0]?.spend??0);
   if(Number(promotion.min_orders||0)>orders) return 'PROMOTION_ORDER_HISTORY_REQUIREMENT';
   if(Number(promotion.min_spend_paise||0)>spend) return 'PROMOTION_SPEND_REQUIREMENT';
@@ -399,8 +399,8 @@ router.post('/orders/:id/cancel', async (req,res,next)=>{ const client=await poo
   if(!needsProviderRefund && needsWalletRefund) await client.query(`UPDATE payments SET status='REFUNDED',updated_at=NOW() WHERE order_id=$1`,[orderId]);
   await client.query('COMMIT');
   await audit('CUSTOMER_ORDER_CANCELLED','orders',orderId,req.authUser!.id,{reason,refundRequired:needsProviderRefund||needsWalletRefund});
-  await recordOrderEvent({orderId,eventType:nextStatus,source:'CUSTOMER_CHECKOUT',actorUserId:req.authUser!.id,payload:{reason,refundRequired:needsRefund}});
-  res.json({cancelled:true,refundRequired:needsRefund,status:nextStatus});
+  await recordOrderEvent({orderId,eventType:nextStatus,source:'CUSTOMER_CHECKOUT',actorUserId:req.authUser!.id,payload:{reason,refundRequired:needsProviderRefund||needsWalletRefund}});
+  res.json({cancelled:true,refundRequired:needsProviderRefund||needsWalletRefund,status:nextStatus});
 } catch(e){await client.query('ROLLBACK');next(e);} finally{client.release();} });
 
 router.post('/checkout/quote', async (req,res,next)=>{ const client=await pool.connect(); try {

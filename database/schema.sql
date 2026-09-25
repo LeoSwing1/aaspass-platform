@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS vendor_plans (
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 CREATE TABLE IF NOT EXISTS vendors (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), owner_user_id UUID REFERENCES users(id), plan_id UUID REFERENCES vendor_plans(id),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), owner_user_id UUID UNIQUE REFERENCES users(id), plan_id UUID REFERENCES vendor_plans(id),
   name VARCHAR(255) NOT NULL, slug VARCHAR(255) UNIQUE NOT NULL, status vendor_status NOT NULL DEFAULT 'PENDING',
   rating NUMERIC(2,1) NOT NULL DEFAULT 0 CHECK (rating BETWEEN 0 AND 5), review_count INTEGER NOT NULL DEFAULT 0,
   is_open BOOLEAN NOT NULL DEFAULT TRUE, phone VARCHAR(20), address_line1 VARCHAR(255), locality VARCHAR(120), city VARCHAR(120), state VARCHAR(120), postal_code VARCHAR(20),
@@ -859,7 +859,8 @@ CREATE TABLE IF NOT EXISTS finance_reconciliation_items (
 CREATE TABLE IF NOT EXISTS provider_reconciliation_runs (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(), provider VARCHAR(50) NOT NULL, status VARCHAR(30) NOT NULL DEFAULT 'RUNNING',
   started_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), finished_at TIMESTAMPTZ, checked_count INTEGER NOT NULL DEFAULT 0,
-  updated_count INTEGER NOT NULL DEFAULT 0, mismatch_count INTEGER NOT NULL DEFAULT 0, summary JSONB NOT NULL DEFAULT '{}', created_by UUID REFERENCES users(id)
+  updated_count INTEGER NOT NULL DEFAULT 0, mismatch_count INTEGER NOT NULL DEFAULT 0, summary JSONB NOT NULL DEFAULT '{}',
+  created_by UUID REFERENCES users(id), created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 CREATE TABLE IF NOT EXISTS provider_reconciliation_items (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(), run_id UUID NOT NULL REFERENCES provider_reconciliation_runs(id) ON DELETE CASCADE,

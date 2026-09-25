@@ -27,7 +27,7 @@ export async function runGrowthAutomation(): Promise<{loyaltyAwarded:number;refe
         referralsRewarded++;
       }
       await client.query('COMMIT');
-      if(!exists.rows[0]) await queueNotification({userId:order.customer_id,channel:'PUSH',title:'AasPass loyalty points added',body:`You earned ${points} AasPass points for your completed order.`,data:{type:'LOYALTY_EARNED',orderId:order.id,points}});
+      if(!exists.rows[0]) await queueNotification({userId:order.customer_id,channel:'PUSH',title:'AasPass loyalty points added',body:`You earned ${points} AasPass points for your completed order.`,data:{type:'LOYALTY_EARNED',orderId:order.id,points:String(points)}});
     }catch(e){await client.query('ROLLBACK');}finally{client.release();}
   }
   return {loyaltyAwarded,referralsRewarded};
