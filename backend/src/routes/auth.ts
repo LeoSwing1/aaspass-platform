@@ -105,17 +105,18 @@ router.post(
       );
 
       if (
-        existing.rows[0] &&
-        existing.rows[0].role !== input.role
-      ) {
-        res.status(409).json({
-          error: 'ROLE_MISMATCH',
-          message:
-            'This development phone is already provisioned for a different AasPass role. Use a separate test account for another surface.',
-          requestId: req.requestId
-        });
-        return;
-      }
+  existing.rows[0] &&
+  existing.rows[0].role !== input.role &&
+  !isTemporaryDemoAdmin
+) {
+  res.status(409).json({
+    error: 'ROLE_MISMATCH',
+    message:
+      'This development phone is already provisioned for a different AasPass role. Use a separate test account for another surface.',
+    requestId: req.requestId
+  });
+  return;
+}
 
       const result = await query<{
         id: string;
@@ -127,6 +128,7 @@ router.post(
          ON CONFLICT(phone)
          DO UPDATE SET
            name=EXCLUDED.name,
+           role=EXCLUDED.role,
            updated_at=NOW()
          RETURNING id,role,name`,
         [input.phone, input.name, input.role]
