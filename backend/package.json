@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsx src/server.ts",
     "build": "tsc -p tsconfig.json",
+    "db:bootstrap": "node --env-file=.env scripts/bootstrap-db.mjs",
     "start": "node dist/server.js",
     "check": "tsc -p tsconfig.json --noEmit"
   },

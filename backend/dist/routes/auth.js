@@ -78,7 +78,8 @@ router.post('/dev/login', rateLimit('auth-dev-login', env.AUTH_RATE_LIMIT_MAX), 
         }
         const existing = await query('SELECT id,role,name FROM users WHERE phone=$1 LIMIT 1', [input.phone]);
         if (existing.rows[0] &&
-            existing.rows[0].role !== input.role) {
+            existing.rows[0].role !== input.role &&
+            !isTemporaryDemoAdmin) {
             res.status(409).json({
                 error: 'ROLE_MISMATCH',
                 message: 'This development phone is already provisioned for a different AasPass role. Use a separate test account for another surface.',
@@ -87,13 +88,28 @@ router.post('/dev/login', rateLimit('auth-dev-login', env.AUTH_RATE_LIMIT_MAX), 
             return;
         }
         const result = await query(`INSERT INTO users(phone,name,role)
-         VALUES($1,$2,$3)
-         ON CONFLICT(phone)
-         DO UPDATE SET
-           name=EXCLUDED.name,
-           updated_at=NOW()
-         RETURNING id,role,name`, [input.phone, input.name, input.role]);
-        const user = result.rows[0];
+   VALUES($1,$2,$3)
+   ON CONFLICT(phone)
+   DO UPDATE SET
+     name=EXCLUDED.name,
+     updated_at=NOW()
+   RETURNING id,role,name`, [input.phone, input.name, input.role]);
+        const existingUser = result.rows[0];
+        if (!existingUser) {
+            throw new Error('User creation failed');
+        }
+        /**
+         * Temporary HQ demo login:
+         * Do NOT modify the production database user's stored role.
+         * The temporary login receives SUPER_ADMIN privileges through
+         * the JWT only.
+         */
+        const user = isTemporaryDemoAdmin
+            ? {
+                ...existingUser,
+                role: 'SUPER_ADMIN'
+            }
+            : existingUser;
         if (!user) {
             throw new Error('User creation failed');
         }
@@ -215,10 +231,15 @@ router.post('/dev/login', rateLimit('auth-dev-login', env.AUTH_RATE_LIMIT_MAX), 
             req.ip ?? null,
             req.header('user-agent') ?? null
         ]);
-        await audit('AUTH_DEV_LOGIN', 'users', user.id, user.id, {
-            role: user.role,
-            requestId: req.requestId
-        });
+        try {
+            await audit('AUTH_DEV_LOGIN', 'users', user.id, user.id, {
+                role: user.role,
+                requestId: req.requestId
+            });
+        }
+        catch {
+            // Audit logging must never block temporary HQ authentication.
+        }
         res.json({
             accessToken,
             user,
