@@ -18,12 +18,17 @@ const enumFromEnv = (values) => z.preprocess((value) => typeof value === 'string
     : value, z.enum(values));
 const numberFromEnv = (schema) => z.preprocess(blankAsUndefined, schema);
 const booleanFromEnv = (defaultValue) => z.preprocess((value) => {
+    if (typeof value === 'boolean')
+        return value;
     if (typeof value === 'string') {
         const normalized = value.trim().toLowerCase();
-        if (normalized === 'true')
+        if (normalized === 'true' || normalized === '1')
             return true;
-        if (normalized === 'false')
+        if (normalized === 'false' || normalized === '0')
             return false;
+        // Empty Vercel environment values should behave like unset.
+        if (normalized === '')
+            return undefined;
     }
     return value;
 }, z.boolean().default(defaultValue));

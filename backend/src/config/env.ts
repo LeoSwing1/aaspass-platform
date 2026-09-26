@@ -37,11 +37,16 @@ const numberFromEnv = <T>(schema: z.ZodType<T>) =>
 const booleanFromEnv = (defaultValue: boolean) =>
   z.preprocess(
     (value) => {
+      if (typeof value === 'boolean') return value;
+
       if (typeof value === 'string') {
         const normalized = value.trim().toLowerCase();
 
-        if (normalized === 'true') return true;
-        if (normalized === 'false') return false;
+        if (normalized === 'true' || normalized === '1') return true;
+        if (normalized === 'false' || normalized === '0') return false;
+
+        // Empty Vercel environment values should behave like unset.
+        if (normalized === '') return undefined;
       }
 
       return value;
