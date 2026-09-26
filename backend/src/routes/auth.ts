@@ -118,22 +118,35 @@ router.post(
   return;
 }
 
-      const result = await query<{
-  id: string;
-  role: (typeof ROLES)[number];
-  name: string;
-}>(
-  `INSERT INTO users(phone,name,role)
-   VALUES($1,$2,$3)
-   ON CONFLICT(phone)
-   DO UPDATE SET
-     name=EXCLUDED.name,
-     updated_at=NOW()
-   RETURNING id,role,name`,
-  [input.phone, input.name, input.role]
-);
+      let existingUser = existing.rows[0];
 
-const existingUser = result.rows[0];
+if (!existingUser) {
+  if (isTemporaryDemoAdmin) {
+    throw new Error(
+      'Temporary demo admin account is missing from the database'
+    );
+  }
+
+  const result = await query<{
+    id: string;
+    role: (typeof ROLES)[number];
+    name: string;
+  }>(
+    `INSERT INTO users(phone,name,role)
+     VALUES($1,$2,$3)
+     RETURNING id,role,name`,
+    [input.phone, input.name, input.role]
+  );
+
+  existingUser = result.rows[0];
+} else {
+  await query(
+    `UPDATE users
+     SET name=$2, updated_at=NOW()
+     WHERE id=$1`,
+    [existingUser.id, input.name]
+  );
+}
 
 if (!existingUser) {
   throw new Error('User creation failed');
