@@ -174,4 +174,4 @@ function firstValue(...values: unknown[]): unknown {
   return null;
 }
 
-export const CASHFREE_MODE: CashfreeMode = env.CASHFREE_MODE;
+export const CASHFREE_MODE: CashfreeMode = env.CASHFREE_MODE === 'production' ? 'production' : 'sandbox';

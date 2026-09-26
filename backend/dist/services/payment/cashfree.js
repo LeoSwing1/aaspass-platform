@@ -113,4 +113,4 @@ function firstValue(...values) {
     }
     return null;
 }
-export const CASHFREE_MODE = env.CASHFREE_MODE;
+export const CASHFREE_MODE = env.CASHFREE_MODE === 'production' ? 'production' : 'sandbox';
