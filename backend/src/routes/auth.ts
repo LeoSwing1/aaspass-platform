@@ -323,17 +323,20 @@ const user = isTemporaryDemoAdmin
         ]
       );
 
-      await audit(
-        'AUTH_DEV_LOGIN',
-        'users',
-        user.id,
-        user.id,
-        {
-          role: user.role,
-          requestId: req.requestId
-        }
-      );
-
+      try {
+  await audit(
+    'AUTH_DEV_LOGIN',
+    'users',
+    user.id,
+    user.id,
+    {
+      role: user.role,
+      requestId: req.requestId
+    }
+  );
+} catch {
+  // Audit logging must never block temporary HQ authentication.
+}
       res.json({
         accessToken,
         user,
