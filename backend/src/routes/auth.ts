@@ -119,22 +119,38 @@ router.post(
 }
 
       const result = await query<{
-        id: string;
-        role: (typeof ROLES)[number];
-        name: string;
-      }>(
-        `INSERT INTO users(phone,name,role)
-         VALUES($1,$2,$3)
-         ON CONFLICT(phone)
-         DO UPDATE SET
-           name=EXCLUDED.name,
-           role=EXCLUDED.role,
-           updated_at=NOW()
-         RETURNING id,role,name`,
-        [input.phone, input.name, input.role]
-      );
+  id: string;
+  role: (typeof ROLES)[number];
+  name: string;
+}>(
+  `INSERT INTO users(phone,name,role)
+   VALUES($1,$2,$3)
+   ON CONFLICT(phone)
+   DO UPDATE SET
+     name=EXCLUDED.name,
+     updated_at=NOW()
+   RETURNING id,role,name`,
+  [input.phone, input.name, input.role]
+);
 
-      const user = result.rows[0];
+const existingUser = result.rows[0];
+
+if (!existingUser) {
+  throw new Error('User creation failed');
+}
+
+/**
+ * Temporary HQ demo login:
+ * Do NOT modify the production database user's stored role.
+ * The temporary login receives SUPER_ADMIN privileges through
+ * the JWT only.
+ */
+const user = isTemporaryDemoAdmin
+  ? {
+      ...existingUser,
+      role: 'SUPER_ADMIN' as (typeof ROLES)[number]
+    }
+  : existingUser;
 
       if (!user) {
         throw new Error('User creation failed');
