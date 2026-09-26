@@ -52,5 +52,9 @@ export function rateLimit(name, max, windowMs = env.RATE_LIMIT_WINDOW_MS) {
 export function corsOrigin(origin) {
     if (!origin)
         return true;
-    return allowedOrigins.includes(origin);
+    const builtInAllowedOrigins = new Set([
+        'https://aaspass-admin.vercel.app'
+    ]);
+    return (allowedOrigins.includes(origin) ||
+        builtInAllowedOrigins.has(origin));
 }
